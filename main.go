@@ -9,12 +9,12 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Fprintf(os.Stderr, "expected 1 argument: url to GET")
+		fmt.Fprintf(os.Stderr, "expected 1 argument: url to GET\n")
 		os.Exit(1)
 	}
 	resp, err := http.Get(os.Args[1])
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "error fetching: %v", err)
+		fmt.Fprintf(os.Stderr, "error fetching: %v\n", err)
 		os.Exit(1)
 	}
 	io.Copy(os.Stdout, resp.Body)
